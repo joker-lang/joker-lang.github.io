@@ -1,0 +1,138 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	padding: 0;
+	margin: 0;
+	font-weight: 400;
+	font-family: Athelas,STHeiti,Microsoft Yahei,serif;
+	font-size: 22px;
+	line-height: 1.5;
+	color: #34495e;
+}
+a {
+	color: #34495e;
+	text-decoration: none;
+}
+.container {
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #deb4b4;
+	padding: 10px 0 5px 0;
+	font-size: 18px;
+}
+ul {
+	list-style: none;
+	padding: 0;
+}
+.menu {
+	margin: 0;
+	display: flex;
+	padding-right: 10px;
+}
+.menu > li {
+	margin: 4px;
+}
+.list > li::before {
+	content: "» ";
+	font-weight: bold;
+	margin-right: 8px;
+	color: #cc4a4a;
+}
+.showcases{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.callout {
+	color: #cc4a4a;
+}
+
+@media only screen and (min-width: 992px) {
+	.showcases {
+		flex-direction: row;
+	}
+	.showcases > div {
+		max-width: 48%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.container {
+		width: 90%;
+	}
+	.menu {
+		font-size: 14px;
+	}
+}
+
+#logo {
+	display: block;
+	width: 25%;
+	max-width: 150px;
+}
+#logo > img {
+	max-width: 100%;
+	height: auto;
+}
+
+.showcase {
+	width: 100%;
+	height: auto;
+	background-color: #ffffff;
+}
+
+.ufc {
+	display: inline-block;
+	vertical-align: middle;
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	box-shadow: 0 0 1px transparent;
+	position: relative;
+	overflow: hidden;
+}
+
+.ufc:before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	height: 2px;
+	bottom: 0;
+	left: 51%;
+	right: 51%;
+	background: #c05b4d;
+	transition-duration: 0.2s;
+	transition-property: right, left;
+	transition-timing-function: ease-out;
+}
+
+.ufc.active:before,
+.ufc:active:before,
+.ufc:focus:before,
+.ufc:hover:before {
+	right: 0;
+	left: 0;
+}
+
+.summary {
+	text-align: center;
+	font-size: 24px;
+	margin: 50px 0 20px 0;
+	/*color: #cc4a4a;*/
+}
+
+footer {
+	font-size: 14px;
+	text-align: center;
+	color: #8a8a8a;
+	margin-top: 60px;
+	margin-bottom: 10px;
+}
+
